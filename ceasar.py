@@ -1,4 +1,4 @@
-def encrypt(text, shift):
+def encrypt(text: str, shift: int) -> str:
 
     a = ""
     for i in text:
@@ -9,7 +9,7 @@ def encrypt(text, shift):
     return a
 
 
-def decrypt(text, shift):
+def decrypt(text: str, shift: int) -> str:
 
     a = ""
     for i in text:
