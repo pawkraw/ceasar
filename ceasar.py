@@ -23,3 +23,5 @@ def decrypt(text: str, shift: int) -> str:
 print(encrypt("ALA MA KOTA A KOTA NIE MA", 4))
 
 print(decrypt("EPE!QE!OSXE!E!OSXE!RMI!QE", 4))
+
+# Comment

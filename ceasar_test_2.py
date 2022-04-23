@@ -1,11 +1,17 @@
 def encrypt(text: str, shift: int) -> str:
-    """Funkcja szyfrująca"""
+    """Funkcja szyfrująca oraz doctest
+    Example:
+    >>> encrypt("CEASAR CIPHER DEMO", 4)
+    'GIEWEVrGMTLIVrHIQS'
+    """
     result = ""
     for char in text:
-        if char.isupper():
-            result += chr((ord(char) + shift - 65) % 25 + 65)
+        if char == " ":
+            result += "!"
+        elif char.isupper():
+            result += chr((ord(char) + shift - 65) % 26 + 65)
         else:
-            result += chr((ord(char) + shift - 97) % 25 + 97)
+            result += chr((ord(char) + shift - 97) % 26 + 97)
     return result
 
 
@@ -13,7 +19,9 @@ def decrypt(text: str, shift: int) -> str:
     """Funkcja deszyfrująca"""
     result = ""
     for char in text:
-        if char.isupper():
+        if char == "!":
+            result += " "
+        elif char.isupper():
             result += chr((ord(char) - shift - 65) % 26 + 65)
         else:
             result += chr((ord(char) - shift - 97) % 26 + 97)
